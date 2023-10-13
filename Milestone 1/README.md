@@ -15,7 +15,3 @@ In this milestone, teams will configure joint angles to maneuver a robot, calcul
 ## Feedback and Contributions
 
 Please open an issue if you encounter any problems or have suggestions for this project. Pull requests are also welcomed!
-
----
-
-You'll need to replace placeholders like `[repository link]`, `[directory name]`, and `[command]` with your specific project details. Also, fill in the setup and installation instructions, as well as any additional usage instructions specific to your project.

@@ -18,9 +18,9 @@ Objective: Navigate the robot to three randomly generated locations (determined 
 
 Objective: Design an environment within GAZEBO that includes the robot, tables, and a task object. The robot should then relocate the task object from one position to another, ensuring there are no collisions during the process.
 
-# Documents Link
+# Video Link
   
-  You can access all of the data and materials for the project at this [Link](https://drive.google.com/drive/folders/12GzNeXPt04xlqZa32DG2jnj5VDyOArYm?usp=sharing).
+  You can access all of the videos for the project at this [Link](https://drive.google.com/drive/folders/12GzNeXPt04xlqZa32DG2jnj5VDyOArYm?usp=sharing).
 
 ## Feedback & Contributions
 

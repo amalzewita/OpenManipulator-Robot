@@ -20,7 +20,7 @@ Using the resources provided, such as packages, scripts, and lab recordings, eac
    - Joint angles resulting from the IK computations should be used to maneuver the robot in Gazebo.
    - Publish the computed joint angles to the respective topics: `/joint1_position/command`, `/joint2_position/command`, and `/joint3_position/command`.
 
-# Explanation for the Given Fkine Code
+# Explanation for the Given fkine Code
 
 ## Overview:
 This Python script calculates the forward kinematics of a robot given the joint angles using the Denavit-Hartenberg (DH) parameters. The script listens to a ROS topic for the robot's joint angles and publishes the calculated position and orientation of the end effector (robot's hand or tool).

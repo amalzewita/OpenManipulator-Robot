@@ -1,5 +1,16 @@
 # ROBOTIS OPEN-MANIPULATOR Control on GAZEBO Simulator using ROS
 
+**Table of Contents**
+
+1. [ROBOTIS OPEN-MANIPULATOR Control on GAZEBO Simulator using ROS](#robotis-open-manipulator-control-on-gazebo-simulator-using-ros)
+    - [Introduction](#introduction)
+    - [Milestones](#milestones)
+        - [Milestone 1](#milestone-1)
+        - [Milestone 2](#milestone-2)
+        - [Milestone 3](#milestone-3)
+    - [Video Link](#video-link)
+    - [Feedback & Contributions](#feedback-contributions)
+
 ## Introduction
 
 This project aims to control the ROBOTIS OPEN-MANIPULATOR in the GAZEBO simulator using ROS and Python. Teams are tasked with positioning the robot and an associated task object within the simulator. The goal is to predict the robot's location, move it to the object's location, pick up the object, and relocate it elsewhere to complete the task.

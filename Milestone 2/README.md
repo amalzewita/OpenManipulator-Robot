@@ -2,6 +2,36 @@
 
 In this milestone, we delve into the core kinematic computations for the Open Manipulator in the Gazebo environment. Teams are tasked with developing forward and inverse kinematics nodes using ROS.
 
+# Table of Contents
+
+1. [Project Milestone 2 - Custom Kinematics with Open Manipulator](#project-milestone-2---custom-kinematics-with-open-manipulator)
+   - [Project Overview](#project-overview)
+   - [Forward Kinematics Node (`fkine_node`)](#forward-kinematics-node-fkine_node)
+   - [Inverse Kinematics Node (`ikine_node`)](#inverse-kinematics-node-ikine_node)
+2. [Explanation for the Given fkine_node Code](#explanation-for-the-given-fkine_node-code)
+   - [Overview](#overview)
+   - [Details](#details)
+     - [Imports](#imports)
+     - [DH Parameters Function](#dh-parameters-function)
+     - [Joint States Callback](#joint-states-callback)
+     - [Main Execution](#main-execution)
+   - [Usage](#usage)
+3. [Explanation for the Given ikine_node Code](#explanation-for-the-given-ikine_node-code)
+   - [Overview](#overview-1)
+   - [Details](#details-1)
+     - [Imports](#imports-1)
+     - [Target Position Callback](#target-position-callback)
+     - [Main Execution](#main-execution-1)
+   - [Usage](#usage-1)
+4. [Explanation for the Given target_node Code](#explanation-for-the-given-target_node-code)
+   - [Overview](#overview-2)
+   - [Details](#details-2)
+     - [Imports](#imports-2)
+     - [Main Execution](#main-execution-2)
+   - [Usage](#usage-2)
+5. [Note](#note)
+6. [Feedback and Contributions](#feedback-and-contributions)
+
 ## Project Overview
 
 Using the resources provided, such as packages, scripts, and lab recordings, each team should submit a working ROS package named `open_manipulator_custom_kinematics` containing two nodes. For all tasks, ensure the robot is spawned in Gazebo.

@@ -105,7 +105,7 @@ if __name__ == '__main__':
   - Run this script, which will then calculate and publish the end effector's position and orientation on the `/position_robot` topic.
   - This script can be helpful in simulation environments or real-world scenarios where you want to know the exact position and orientation of the robot's end effector based on its joint angles.
 
-# Explanation for the Given inkine_node Code
+# Explanation for the Given ikine_node Code
 
 ## Overview:
 This Python script calculates the inverse kinematics of a robot given a target position for the end effector. The script listens to a ROS topic for the desired end effector position and computes the joint angles required to reach that position. It then publishes the calculated joint angles to control the robot.

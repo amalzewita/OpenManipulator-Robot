@@ -1,4 +1,4 @@
-# ROBOTIS OPEN-MANIPULATOR Control on GAZEBO Simulator
+# ROBOTIS OPEN-MANIPULATOR Control on GAZEBO Simulator using ROS
 
 ## Introduction
 

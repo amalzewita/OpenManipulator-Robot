@@ -1,5 +1,15 @@
 ## Explanation for the Trajectory Planner Node Code
 
+**Table of Contents**
+
+1. [Explanation for the Trajectory Planner Node Code](#explanation-for-the-trajectory-planner-node-code)
+    - [Overview](#overview)
+    - [Import Dependencies](#import-dependencies)
+    - [Function Definitions](#function-definitions)
+    - [Main Execution](#main-execution)
+    - [Key Notes](#key-notes)
+    - [Usage](#usage)
+
 ### Overview:
 
 The given script provides a trajectory planner for a robotic arm in a ROS environment. The script calculates joint angles using third-order polynomial planning and then actuates the robot accordingly. Additionally, it provides commands to control a gripper's opening and closing.

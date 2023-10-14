@@ -2,6 +2,19 @@
 
 In this milestone, teams will configure joint angles to maneuver a robot, calculate the end effector's position, and publish it using ROS.
 
+**Table of Contents**
+
+1. [Project Milestone 1 - Forward Kinematics with ROS and Denavit-Hartenberg (DH) Parameters](#project-milestone-1---forward-kinematics-with-ros-and-denavit-hartenberg-dh-parameters)
+    - [Objectives](#objectives)
+    - [CODE File](#code-file)
+        - [Libraries & Imports](#libraries--imports)
+        - [Functions](#functions)
+        - [Global Variables](#global-variables)
+        - [Main Execution](#main-execution)
+        - [Key Points](#key-points)
+    - [Usage](#usage)
+    - [Feedback and Contributions](#feedback-and-contributions)
+
 ## Objectives
 
 1. Decide on a set of 4 reasonable joint angles ensuring **all joints are moved**.

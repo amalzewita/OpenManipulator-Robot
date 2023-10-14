@@ -75,8 +75,52 @@ if __name__ == '__main__':
   - Run this script, which will then calculate and publish the end effector's position and orientation on the `/position_robot` topic.
   - This script can be helpful in simulation environments or real-world scenarios where you want to know the exact position and orientation of the robot's end effector based on its joint angles.
 
+# Explanation for the Given inkine Code
+
+## Overview:
+This Python script calculates the inverse kinematics of a robot given a target position for the end effector. The script listens to a ROS topic for the desired end effector position and computes the joint angles required to reach that position. It then publishes the calculated joint angles to control the robot.
+
+## Details:
+
+### Imports:
+```python
+import rospy
+import numpy as np
+from std_msgs.msg import Float64, Float32MultiArray 
+```
+- `rospy`: The primary Python library for ROS.
+- `numpy`: A library for numerical operations in Python.
+- `Float64`: A ROS message type for a 64-bit float.
+- `Float32MultiArray`: A ROS message type for arrays of 32-bit floats.
+
+### Target Position Callback:
+```python
+def target_clbk(recived_msg):
+```
+- A callback function that's invoked when new data is received on the `/target_position` topic.
+- This function calculates the inverse kinematics for the robot to reach the desired position. It involves trigonometry and geometry based on the robot's structure and the provided target coordinates.
+
+### Main Execution:
+```python
+if __name__ == '__main__':
+```
+- Initializes a ROS node named `ikine_node`.
+- Defines publishers for each of the three robot joints. These publishers send commands to move the robot's joints.
+- Subscribes to the `/target_position` topic to get the desired position for the robot's end effector.
+- Initializes several parameters related to the robot's geometry and joint angles.
+- Inside the main loop:
+  - The calculated joint angles are published to control the robot.
+  - A log message is printed showing the calculated joint angles.
+
+## Usage:
+- To use this script in a ROS environment:
+  - Ensure that your system can accept joint commands on the specified topics (`/joint1_position/command`, etc.).
+  - Provide the target position for the robot's end effector by publishing to the `/target_position` topic.
+  - Run this script, which will then calculate the joint angles needed to reach the target position and send commands to move the robot's joints.
+  - This script is ideal for simulation environments or real-world scenarios where you want to control a robot based on a desired end effector position, and you know the robot's geometry.
+
 ## Note:
-This code assumes a specific robot arm structure and might need modifications based on the actual robot's design and DH parameters.
+This code assumes a specific robot arm structure and might need modifications based on the actual robot's design and geometry.
 
 ## Feedback and Contributions
 

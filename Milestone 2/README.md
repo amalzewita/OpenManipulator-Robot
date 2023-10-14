@@ -20,7 +20,7 @@ Using the resources provided, such as packages, scripts, and lab recordings, eac
    - Joint angles resulting from the IK computations should be used to maneuver the robot in Gazebo.
    - Publish the computed joint angles to the respective topics: `/joint1_position/command`, `/joint2_position/command`, and `/joint3_position/command`.
 
-# Explanation for the Given fkine Code
+# Explanation for the Given fkine_node Code
 
 ## Overview:
 This Python script calculates the forward kinematics of a robot given the joint angles using the Denavit-Hartenberg (DH) parameters. The script listens to a ROS topic for the robot's joint angles and publishes the calculated position and orientation of the end effector (robot's hand or tool).
@@ -75,7 +75,7 @@ if __name__ == '__main__':
   - Run this script, which will then calculate and publish the end effector's position and orientation on the `/position_robot` topic.
   - This script can be helpful in simulation environments or real-world scenarios where you want to know the exact position and orientation of the robot's end effector based on its joint angles.
 
-# Explanation for the Given inkine Code
+# Explanation for the Given inkine_node Code
 
 ## Overview:
 This Python script calculates the inverse kinematics of a robot given a target position for the end effector. The script listens to a ROS topic for the desired end effector position and computes the joint angles required to reach that position. It then publishes the calculated joint angles to control the robot.
@@ -118,6 +118,83 @@ if __name__ == '__main__':
   - Provide the target position for the robot's end effector by publishing to the `/target_position` topic.
   - Run this script, which will then calculate the joint angles needed to reach the target position and send commands to move the robot's joints.
   - This script is ideal for simulation environments or real-world scenarios where you want to control a robot based on a desired end effector position, and you know the robot's geometry.
+
+# Explanation for the Given target_node Code
+
+## Overview:
+
+This Python script continuously broadcasts a fixed target position for the end effector of a robot in a ROS (Robot Operating System) environment. The target position is given as Cartesian coordinates in the format [X, Y, Z]. This node can be used in simulations or real-world applications where a robot needs a constant target point to aim for or move towards.
+
+## Details:
+
+### Imports:
+```python
+import rospy
+import numpy as np
+from std_msgs.msg import Float32MultiArray 
+```
+- `rospy`: The primary Python library for ROS. It provides essential functionalities to interface with ROS topics, services, and more.
+- `numpy`: A library for numerical operations in Python. Used here primarily for data type conversion.
+- `Float32MultiArray`: A ROS message type for arrays of 32-bit floats.
+
+### Main Execution:
+```python
+if __name__ == '__main__':
+```
+- The script starts its execution here if it's the main module being run.
+
+1. **Node Initialization**:
+```python
+rospy.init_node("target_node")
+```
+   - Initializes a ROS node named `target_node`.
+
+2. **Publisher Initialization**:
+```python
+target_pub = rospy.Publisher("/target_position", Float32MultiArray, queue_size = 10)
+```
+   - Creates a publisher named `target_pub` that will publish messages of type `Float32MultiArray` to the `/target_position` topic. The `queue_size` parameter is set to 10, indicating that up to 10 messages can be stored in the queue before they start getting dropped.
+
+3. **Rate Initialization**:
+```python
+rate = rospy.Rate(10)
+```
+   - The rate at which the loop should execute is set to 10 Hz.
+
+4. **Main Loop**:
+```python
+while not rospy.is_shutdown():
+```
+   - The code within this loop will run repeatedly until the ROS node is shut down.
+
+   - **Set Target Coordinates**:
+```python
+target_msg = Float32MultiArray()
+target_msg.data = [0.169, 0.269, 0.169]
+```
+      - Initializes an instance of `Float32MultiArray`.
+      - The target coordinates [X, Y, Z] are set to [0.169, 0.269, 0.169].
+
+   - **Publish and Log**:
+```python
+target_pub.publish(target_msg)
+rospy.loginfo("Target Goal [X Y Z]")
+rospy.loginfo(np.array(target_msg.data).astype(np.float16))
+```
+      - The target position is published to the `/target_position` topic.
+      - The script logs the set target coordinates for easier monitoring.
+
+   - **Sleep**:
+```python
+rate.sleep()
+```
+      - Ensures that the loop runs at the desired rate of 10 Hz.
+
+## Usage:
+- To use this script in a ROS environment:
+  - Run the script. It will initialize the `target_node` and start publishing the set target position ([0.169, 0.269, 0.169]) to the `/target_position` topic at a rate of 10 Hz.
+  - Other nodes in the ROS environment can subscribe to the `/target_position` topic to receive and process the published target position.
+  - This script is beneficial when testing or simulating robot systems that rely on a fixed target position.
 
 ## Note:
 This code assumes a specific robot arm structure and might need modifications based on the actual robot's design and geometry.

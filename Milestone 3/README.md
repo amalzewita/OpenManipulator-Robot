@@ -1,4 +1,4 @@
-## Explanation for the Trajectory Planner Node (README)
+## Explanation for the Trajectory Planner Node Code
 
 ### Overview:
 
